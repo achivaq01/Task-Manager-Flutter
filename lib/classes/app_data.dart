@@ -28,4 +28,9 @@ class AppData with ChangeNotifier {
     notifyListeners();
   }
 
+  changeTaskStatus(int index) {
+    tasks[index].finished ^= true;
+    notifyListeners();
+  }
+
 }

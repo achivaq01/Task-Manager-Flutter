@@ -44,7 +44,8 @@ class TaskListState extends State<TaskList> {
         itemBuilder: (context, index) => TaskTile(
             key: Key('$index'),
             task: appData.tasks[index],
-            onChanged: (value) => print('Checkbox value changed to: $value')),
+            onChanged: (value) =>
+                appData.changeTaskStatus(index)),
         itemCount: appData.tasks.length,
         onReorder: (int oldIndex, int newIndex) {
           setState(() {
