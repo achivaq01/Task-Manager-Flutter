@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:untitled/widgets/task_tile.dart';
 
 import '../classes/app_data.dart';
 
@@ -17,6 +18,7 @@ class TaskListState extends State<TaskList> {
     final appData = Provider.of<AppData>(context);
     final List<int> items = List<int>.generate(50, (int index) => index);
 
+    /*
     return ReorderableListView(
         padding: const EdgeInsets.symmetric(horizontal: 300),
         children: <Widget>[
@@ -36,8 +38,22 @@ class TaskListState extends State<TaskList> {
             items.insert(newIndex, item);
           });
         });
+     */
 
-
-    //return ReorderableListView.builder(itemBuilder: itemBuilder, itemCount: itemCount, onReorder: onReorder);
+    return ReorderableListView.builder(
+        itemBuilder: (context, index) => TaskTile(
+            key: Key('$index'),
+            task: appData.tasks[index],
+            onChanged: (value) => print('Checkbox value changed to: $value')),
+        itemCount: appData.tasks.length,
+        onReorder: (int oldIndex, int newIndex) {
+          setState(() {
+            if (oldIndex < newIndex) {
+              newIndex -= 1;
+            }
+            final int item = items.removeAt(oldIndex);
+            items.insert(newIndex, item);
+          });
+        });
   }
 }
