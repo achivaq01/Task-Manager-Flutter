@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled/classes/task.dart';
+import 'package:untitled/widgets/editable_text_field.dart';
 
 import '../classes/app_data.dart';
 
@@ -31,14 +32,7 @@ class TaskTileStatus extends State<TaskTile> {
         title: Row(
           children: [
             Expanded(
-                child: TextField(
-                  readOnly: true,
-                  controller: TextEditingController(text: task.name),
-                  decoration: const InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'debug',
-                  ),
-                )
+                child: EditableTextField(text: '',),
             ),
             Checkbox(value: task.finished, onChanged: widget.onChanged)
           ],
