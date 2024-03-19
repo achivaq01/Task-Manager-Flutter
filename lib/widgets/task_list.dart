@@ -45,7 +45,7 @@ class TaskListState extends State<TaskList> {
             key: Key('$index'),
             task: appData.tasks[index],
             onChanged: (value) =>
-                appData.changeTaskStatus(index)),
+                appData.changeTaskStatus(index), index: index),
         itemCount: appData.tasks.length,
         onReorder: (int oldIndex, int newIndex) {
           setState(() {

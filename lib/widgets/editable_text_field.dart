@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../classes/app_data.dart';
+
 class EditableTextField extends StatefulWidget {
-  String text;
-  EditableTextField({super.key, required this.text});
+  final AppData appData;
+  final int index;
+  const EditableTextField({super.key, required this.appData, required this.index});
 
   @override
   State<StatefulWidget> createState() => EditableTextFieldState();
@@ -11,12 +14,11 @@ class EditableTextField extends StatefulWidget {
 class EditableTextFieldState extends State<EditableTextField> {
   bool isEditingText = false;
   TextEditingController? editingController;
-  String text = "AAAAAAAAAAa";
 
   @override
   void initState() {
     super.initState();
-    editingController = TextEditingController(text: text);
+    editingController = TextEditingController(text: "");
   }
 
   @override
@@ -27,6 +29,7 @@ class EditableTextFieldState extends State<EditableTextField> {
 
   @override
   Widget build(BuildContext context) {
+    String text = widget.appData.tasks[widget.index].name;
     if (isEditingText) {
       return Center(
         child: TextField(
