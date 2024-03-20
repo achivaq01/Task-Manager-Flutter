@@ -17,3 +17,7 @@ E
 lib/app.dart,d\7\d7385a4005dce0a23f18c0169dbfd512b5b352e3
 I
 lib/classes/app_data.dart,9\d\9d7e1952bffbde49dbd40ad93013195c2269fb4f
+E
+lib/classes/task.dart,b\8\b846e2de44e2180c16708b2557efa9927c47bb56
+B
+lib/constants.dart,f\2\f262751ff2aa81ea6c5e51f76d29c9119c59b6b2

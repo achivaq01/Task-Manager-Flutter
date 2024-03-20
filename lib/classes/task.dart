@@ -1,7 +1,9 @@
 
+import '../constants.dart';
+
 class Task {
   String name;
-  bool finished = false;
+  bool status = !statusFinished;
 
   Task({required this.name});
 }

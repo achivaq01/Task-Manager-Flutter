@@ -29,7 +29,7 @@ class TaskTileStatus extends State<TaskTile> {
             Expanded(
                 child: EditableTextField(appData: appData, index: widget.index),
             ),
-            Checkbox(value: task.finished, onChanged: (value) {
+            Checkbox(value: task.status, onChanged: (value) {
               appData.changeTaskStatus(widget.index);
             })
           ],
