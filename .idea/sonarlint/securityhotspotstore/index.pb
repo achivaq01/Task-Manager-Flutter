@@ -15,3 +15,5 @@ E
 analysis_options.yaml,9\5\9573dd68c24611034c89c926cde7e71d100ed7ab
 <
 lib/app.dart,d\7\d7385a4005dce0a23f18c0169dbfd512b5b352e3
+I
+lib/classes/app_data.dart,9\d\9d7e1952bffbde49dbd40ad93013195c2269fb4f

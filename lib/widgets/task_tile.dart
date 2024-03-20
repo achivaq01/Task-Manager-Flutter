@@ -8,9 +8,8 @@ import '../classes/app_data.dart';
 
 class TaskTile extends StatefulWidget {
   final Task task;
-  final ValueChanged<bool?>? onChanged;
   final int index;
-  const TaskTile({super.key, required this.task, required this.onChanged, required this.index});
+  const TaskTile({super.key, required this.task, required this.index});
 
 
   @override
@@ -24,18 +23,15 @@ class TaskTileStatus extends State<TaskTile> {
     Task task = widget.task;
 
     return InkWell(
-      onTap: () {
-        if (widget.onChanged != null) {
-          widget.onChanged!(!widget.task.finished);
-        }
-      },
       child: ListTile(
         title: Row(
           children: [
             Expanded(
                 child: EditableTextField(appData: appData, index: widget.index),
             ),
-            Checkbox(value: task.finished, onChanged: widget.onChanged)
+            Checkbox(value: task.finished, onChanged: (value) {
+              appData.changeTaskStatus(widget.index);
+            })
           ],
         ),
       ),

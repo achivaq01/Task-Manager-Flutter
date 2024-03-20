@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../classes/app_data.dart';
 
@@ -29,13 +30,14 @@ class EditableTextFieldState extends State<EditableTextField> {
 
   @override
   Widget build(BuildContext context) {
-    String text = widget.appData.tasks[widget.index].name;
+    final appData = Provider.of<AppData>(context);
+
     if (isEditingText) {
       return Center(
         child: TextField(
           onSubmitted: (newValue) {
             setState(() {
-              text = newValue;
+              appData.tasks[widget.index].name = newValue;
               isEditingText = false;
             });
           },
@@ -46,10 +48,13 @@ class EditableTextFieldState extends State<EditableTextField> {
     }
     return InkWell(
         onTap: () {
-          isEditingText = true;
+          setState(() {
+            editingController?.text = appData.tasks[widget.index].name;
+            isEditingText = true;
+          });
         },
         child: Text(
-          text,
+          appData.tasks[widget.index].name,
           style: const TextStyle(
             color: Colors.white,
             fontSize: 18.0,

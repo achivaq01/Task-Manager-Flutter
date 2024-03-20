@@ -33,4 +33,8 @@ class AppData with ChangeNotifier {
     notifyListeners();
   }
 
+  forceNotifyListeners() {
+    notifyListeners();
+  }
+
 }
