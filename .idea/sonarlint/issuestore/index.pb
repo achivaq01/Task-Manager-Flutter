@@ -7,3 +7,11 @@ T
 $lib/widgets/editable_text_field.dart,5\7\57ded8ad1cc3b06f5be60377067af3881470e476
 J
 lib/widgets/task_list.dart,0\a\0aca681c91a0356e0e32c752a38c6be96ebced8f
+<
+pubspec.lock,c\1\c1c78778a0cef1e5344166792d1d823fdcb8b109
+<
+pubspec.yaml,e\8\e8e045469170189f1d6ef12576bd01af132b1018
+E
+analysis_options.yaml,9\5\9573dd68c24611034c89c926cde7e71d100ed7ab
+<
+lib/app.dart,d\7\d7385a4005dce0a23f18c0169dbfd512b5b352e3

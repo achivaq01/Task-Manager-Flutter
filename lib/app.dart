@@ -20,6 +20,7 @@ class AppState extends State<App> {
     return MaterialApp(
       theme: appData.theme,
       home: const Layout(),
+      debugShowCheckedModeBanner: false,
     );
   }
 
