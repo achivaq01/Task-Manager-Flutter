@@ -38,7 +38,6 @@ dependencies:
   provider: ^6.1.2
   window_manager: ^0.3.8
   sidebarx: ^0.16.3
-  sqflite_common_ffi: ^2.3.3
 
 dev_dependencies:
   flutter_test:

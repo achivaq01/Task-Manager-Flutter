@@ -8,7 +8,11 @@ enum Views {
 class AppData with ChangeNotifier {
   Views _currentView = Views.home;
   ThemeData _currentTheme = ThemeData.dark();
-  List<Task> tasks = [];
+  List<Task> tasks = [
+    Task(name: "name"),
+    Task(name: "name2"),
+    Task(name: "name3")
+  ];
 
 
   Views get views => _currentView;
