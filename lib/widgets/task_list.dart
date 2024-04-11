@@ -18,10 +18,9 @@ class TaskListState extends State<TaskList> {
     final appData = Provider.of<AppData>(context);
 
     return ReorderableListView.builder(
+        buildDefaultDragHandles: false,
         itemBuilder: (context, index) => TaskTile(
-            key: Key('$index'),
-            task: appData.tasks[index],
-            index: index),
+            key: Key('$index'), task: appData.tasks[index], index: index),
         itemCount: appData.tasks.length,
         shrinkWrap: true,
         onReorder: (int oldIndex, int newIndex) {

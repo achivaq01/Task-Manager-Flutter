@@ -23,27 +23,32 @@ class TaskTileStatus extends State<TaskTile> {
     Task task = widget.task;
     Color tileColor = task.status ? theme.highlightColor : theme.cardColor;
 
-    return Container(
-      color: tileColor,
-      child: InkWell(
-        child: Material(
-          elevation: 5.0,
-          child: ListTile(
-            onLongPress: () => appData.deleteTask(widget.index),
-            title: Row(
-              children: [
-                Expanded(
-                  child: EditableTextField(appData: appData, index: widget.index),
+    return
+      ReorderableDragStartListener(
+          index: widget.index,
+          child: Container(
+            color: tileColor,
+            child: InkWell(
+              child: Material(
+                elevation: 5.0,
+                child: ListTile(
+                  onLongPress: () => appData.deleteTask(widget.index),
+                  title: Row(
+                    children: [
+                      Expanded(
+                        child: EditableTextField(appData: appData, index: widget.index),
+                      ),
+                      Checkbox(value: task.status, onChanged: (value) {
+                        appData.changeTaskStatus(widget.index);
+                      })
+                    ],
+                  ),
                 ),
-                Checkbox(value: task.status, onChanged: (value) {
-                  appData.changeTaskStatus(widget.index);
-                })
-              ],
+              ),
             ),
-          ),
-        ),
-      ),
-    );
+          )
+      );
+
   }
 
 }
