@@ -8,4 +8,4 @@ const bool statusFinished = true;
 
 
 // NewTaskButton values
-const double newTaskButtonDimensions = 100;
+const double newTaskButtonDimensions = 75;

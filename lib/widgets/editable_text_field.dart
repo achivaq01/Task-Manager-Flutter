@@ -6,7 +6,9 @@ import '../classes/app_data.dart';
 class EditableTextField extends StatefulWidget {
   final AppData appData;
   final int index;
-  const EditableTextField({super.key, required this.appData, required this.index});
+
+  const EditableTextField(
+      {super.key, required this.appData, required this.index});
 
   @override
   State<StatefulWidget> createState() => EditableTextFieldState();

@@ -20,19 +20,24 @@ class TaskTileStatus extends State<TaskTile> {
   @override
   Widget build(BuildContext context) {
     final appData = Provider.of<AppData>(context);
+    ThemeData theme = appData.theme;
     Task task = widget.task;
+    Color tileColor = task.status ? theme.highlightColor : theme.cardColor;
 
-    return InkWell(
-      child: ListTile(
-        title: Row(
-          children: [
-            Expanded(
+    return Container(
+      color: tileColor,
+      child: InkWell(
+        child: ListTile(
+          title: Row(
+            children: [
+              Expanded(
                 child: EditableTextField(appData: appData, index: widget.index),
-            ),
-            Checkbox(value: task.status, onChanged: (value) {
-              appData.changeTaskStatus(widget.index);
-            })
-          ],
+              ),
+              Checkbox(value: task.status, onChanged: (value) {
+                appData.changeTaskStatus(widget.index);
+              })
+            ],
+          ),
         ),
       ),
     );
