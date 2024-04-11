@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled/widgets/task_tile.dart';
@@ -24,6 +23,7 @@ class TaskListState extends State<TaskList> {
             task: appData.tasks[index],
             index: index),
         itemCount: appData.tasks.length,
+        shrinkWrap: true,
         onReorder: (int oldIndex, int newIndex) {
           setState(() {
             if (oldIndex < newIndex) {

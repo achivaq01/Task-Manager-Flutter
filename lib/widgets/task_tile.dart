@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled/classes/task.dart';
@@ -27,16 +26,20 @@ class TaskTileStatus extends State<TaskTile> {
     return Container(
       color: tileColor,
       child: InkWell(
-        child: ListTile(
-          title: Row(
-            children: [
-              Expanded(
-                child: EditableTextField(appData: appData, index: widget.index),
-              ),
-              Checkbox(value: task.status, onChanged: (value) {
-                appData.changeTaskStatus(widget.index);
-              })
-            ],
+        child: Material(
+          elevation: 5.0,
+          child: ListTile(
+            onLongPress: () => appData.deleteTask(widget.index),
+            title: Row(
+              children: [
+                Expanded(
+                  child: EditableTextField(appData: appData, index: widget.index),
+                ),
+                Checkbox(value: task.status, onChanged: (value) {
+                  appData.changeTaskStatus(widget.index);
+                })
+              ],
+            ),
           ),
         ),
       ),

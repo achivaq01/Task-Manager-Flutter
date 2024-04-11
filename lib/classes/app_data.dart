@@ -8,11 +8,7 @@ enum Views {
 class AppData with ChangeNotifier {
   Views _currentView = Views.home;
   ThemeData _currentTheme = ThemeData.dark();
-  List<Task> tasks = [
-    Task(name: "name"),
-    Task(name: "name2"),
-    Task(name: "name3")
-  ];
+  List<Task> tasks = [];
 
 
   Views get views => _currentView;
@@ -29,6 +25,23 @@ class AppData with ChangeNotifier {
 
   changeTaskStatus(int index) {
     tasks[index].status ^= true;
+    notifyListeners();
+  }
+
+  double taskCompletionProgress() {
+    int taskAmount = tasks.length;
+    int completedTasks = 0;
+    for (Task task in tasks) {
+      if (task.status) {
+        completedTasks++;
+      }
+    }
+    double completionProgress = completedTasks / taskAmount;
+    return completionProgress;
+  }
+
+  deleteTask(int taskIndex) {
+    tasks.removeAt(taskIndex);
     notifyListeners();
   }
 

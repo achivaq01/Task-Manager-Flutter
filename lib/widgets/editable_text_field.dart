@@ -57,8 +57,8 @@ class EditableTextFieldState extends State<EditableTextField> {
         },
         child: Text(
           appData.tasks[widget.index].name,
-          style: const TextStyle(
-            color: Colors.white,
+          style: TextStyle(
+            color: appData.theme.unselectedWidgetColor,
             fontSize: 18.0,
           ),
         ));
