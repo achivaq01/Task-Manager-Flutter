@@ -28,5 +28,6 @@ Future<void> main() async {
 
 void showWindow(_) async {
   windowManager.setMinimumSize(const Size(minWindowHeight, minWindowWidth));
+  await windowManager.setIcon("data/icon.png");
   await windowManager.setTitle(appName);
 }

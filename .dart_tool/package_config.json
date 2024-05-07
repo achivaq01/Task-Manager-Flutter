@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "args",
+      "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/args-2.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "async",
       "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/async-2.11.0",
       "packageUri": "lib/",
@@ -44,12 +50,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "ffi",
-      "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/ffi-2.1.2",
-      "packageUri": "lib/",
-      "languageVersion": "3.3"
-    },
-    {
       "name": "flutter",
       "rootUri": "file:///C:/tools/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -68,10 +68,10 @@
       "languageVersion": "3.2"
     },
     {
-      "name": "js",
-      "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.6.7",
+      "name": "flutter_to_debian",
+      "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_to_debian-2.0.2",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "2.15"
     },
     {
       "name": "leak_tracker",
@@ -112,6 +112,12 @@
     {
       "name": "meta",
       "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.11.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "mime_type",
+      "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/mime_type-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -158,24 +164,6 @@
       "languageVersion": "2.18"
     },
     {
-      "name": "sqflite_common",
-      "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_common-2.5.4",
-      "packageUri": "lib/",
-      "languageVersion": "3.3"
-    },
-    {
-      "name": "sqflite_common_ffi",
-      "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_common_ffi-2.3.3",
-      "packageUri": "lib/",
-      "languageVersion": "3.3"
-    },
-    {
-      "name": "sqlite3",
-      "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/sqlite3-2.4.0",
-      "packageUri": "lib/",
-      "languageVersion": "3.2"
-    },
-    {
       "name": "stack_trace",
       "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/stack_trace-1.11.1",
       "packageUri": "lib/",
@@ -192,12 +180,6 @@
       "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/string_scanner-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
-    },
-    {
-      "name": "synchronized",
-      "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/synchronized-3.1.0+1",
-      "packageUri": "lib/",
-      "languageVersion": "3.0"
     },
     {
       "name": "term_glyph",
@@ -230,13 +212,19 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "yaml",
+      "rootUri": "file:///C:/Users/alexc/AppData/Local/Pub/Cache/hosted/pub.dev/yaml-3.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "untitled",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-03-20T17:55:50.438291Z",
+  "generated": "2024-05-07T19:47:44.411815Z",
   "generator": "pub",
-  "generatorVersion": "3.3.1"
+  "generatorVersion": "3.3.4"
 }

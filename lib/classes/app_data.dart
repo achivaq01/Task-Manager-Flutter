@@ -9,6 +9,7 @@ class AppData with ChangeNotifier {
   Views _currentView = Views.home;
   ThemeData _currentTheme = ThemeData.dark();
   List<Task> tasks = [];
+  String title = "Task title";
 
 
   Views get views => _currentView;

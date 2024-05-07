@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sidebarx/sidebarx.dart';
-import 'package:untitled/widgets/header.dart';
+import 'package:untitled/widgets/editable_text_field.dart';
 import 'package:untitled/widgets/new_task_button.dart';
 import 'package:untitled/widgets/task_list.dart';
 
@@ -21,9 +20,9 @@ class LayoutState extends State<Layout> {
   Widget build(BuildContext context) {
     final appData = Provider.of<AppData>(context);
     SidebarXController sidebarXController =
-        SidebarXController(selectedIndex: 0);
-    double contextWidth = MediaQuery.sizeOf(context).width;
-    double contextHeight = MediaQuery.sizeOf(context).height;
+    SidebarXController(selectedIndex: 0);
+    double contextWidth = MediaQuery.of(context).size.width;
+    double contextHeight = MediaQuery.of(context).size.height;
 
     double taskListWidth = contextWidth;
     double taskListHeight = contextHeight * 0.8;
@@ -33,23 +32,25 @@ class LayoutState extends State<Layout> {
         return Scaffold(
           body: Column(
             children: [
-              const Header(title: "Title!", titleSize: 20),
+              Padding(padding: const EdgeInsets.all(20), child: EditableTextField(appData: appData, index: 0, isTitle: true,),),
               LinearProgressIndicator(
                 value: appData.tasks.isNotEmpty
                     ? appData.taskCompletionProgress()
                     : 0,
-                color: Colors.blue,
+                color: Colors.deepPurple,
                 backgroundColor: appData.theme.cardColor,
               ),
-              SizedBox(
-                width: taskListWidth,
-                height: taskListHeight,
-                child: const TaskList(),
+              Expanded(
+                child: SizedBox(
+                  width: taskListWidth,
+                  height: taskListHeight,
+                  child: const TaskList(),
+                ),
               ),
-              const SizedBox(
-                width: newTaskButtonDimensions,
-                height: newTaskButtonDimensions,
-                child: NewTaskButton(),
+              const Padding(padding: EdgeInsets.only(bottom: 30), child: SizedBox(
+                  width: newTaskButtonDimensions,
+                  height: newTaskButtonDimensions,
+                  child: NewTaskButton())
               )
             ],
           ),
