@@ -37,8 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   provider: ^6.1.2
   window_manager: ^0.3.8
-  sidebarx: ^0.16.3
-  flutter_to_debian: ^2.0.2
+  flutter_distributor: ^0.4.0
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sidebarx/sidebarx.dart';
 import 'package:untitled/widgets/editable_text_field.dart';
 import 'package:untitled/widgets/new_task_button.dart';
 import 'package:untitled/widgets/task_list.dart';
@@ -19,8 +18,6 @@ class LayoutState extends State<Layout> {
   @override
   Widget build(BuildContext context) {
     final appData = Provider.of<AppData>(context);
-    SidebarXController sidebarXController =
-    SidebarXController(selectedIndex: 0);
     double contextWidth = MediaQuery.of(context).size.width;
     double contextHeight = MediaQuery.of(context).size.height;
 
